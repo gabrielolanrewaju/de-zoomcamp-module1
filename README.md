@@ -54,7 +54,7 @@ Start Docker Desktop before running the commands below. Python and uv are includ
 Clone the repository and open the project directory.
 
 ```bash
-git clone https://github.com/gabrielolanrewajuu/de-zoomcamp-module1.git
+git clone https://github.com/gabrielolanrewaju/de-zoomcamp-module1.git
 cd de-zoomcamp-module1
 ```
 
