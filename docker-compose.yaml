@@ -1,0 +1,38 @@
+services:
+  pgdatabase:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ny_taxi
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U root -d ny_taxi"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  pgadmin:
+    image: dpage/pgadmin4:9
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+  ingest:
+    build: .
+    profiles: ["ingest"]
+    entrypoint: ["python", "ingest_data.py"]
+    environment:
+      PGPASSWORD: root
+    command: ["--pg-host", "pgdatabase"]
+    depends_on:
+      pgdatabase:
+        condition: service_healthy
+volumes:
+  postgres_data:
+  pgadmin_data:
