@@ -250,7 +250,6 @@ docker compose logs pgdatabase
 
 Python syntax, command-line help, and Docker Compose configuration checks have passed. A full Docker build and database ingestion run are pending verification.
 
-## Course and dataset
+## Acknowledgments
 
-- [Data Engineering Zoomcamp — Module 1](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/01-docker-terraform)
-- [NYC taxi data used by the course](https://github.com/DataTalksClub/nyc-tlc-data)
+This project was developed as part of DataTalks.Club's Data Engineering Zoomcamp. The ingestion script adapts the organization's course example, using its NYC taxi dataset.
