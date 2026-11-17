@@ -1,6 +1,4 @@
-# NYC taxi pipeline — beginner guide
-
-This project follows [Data Engineering Zoomcamp Module 1](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/01-docker-terraform).
+# NYC taxi pipeline
 
 A data pipeline is a program that reads data, does some processing, and writes the result somewhere useful.
 
